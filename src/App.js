@@ -7,23 +7,30 @@ const messages = [
 ];
 
 export default function App() {
+ return(
+ <div>
+    <Steps />
+  </div>);
+}
+
+function Steps() {
 
   const [step, setStep] = useState(1);
   const [isOpen, SetOpen] = useState(true);
 
   function handlePrevious() {
     if (step > 1)
-      setStep(step - 1);
+      setStep( (s) => s - 1 );
   }
 
   function handleNext() {
     if (step < 3)
-      setStep(step + 1);
+      setStep((s)=> s + 1);
   }
 
   return (
     <>
-      <button className="close" onClick={()=>SetOpen(!isOpen)} >&times;</button>
+      <button className="close" onClick={()=>SetOpen((is)=>!is)} >&times;</button>
       {isOpen && (
        <div className="steps">
         <div className="numbers">
