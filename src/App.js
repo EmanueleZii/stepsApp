@@ -14,7 +14,7 @@ export default function App() {
 }
 
 function Steps() {
-
+ 
   const [step, setStep] = useState(1);
   const [isOpen, SetOpen] = useState(true);
 
@@ -39,7 +39,11 @@ function Steps() {
           <div className={step >= 3 ? "active" : ""}>3</div>
         </div>
         <br></br>
-        <p className="messagge" >Step {step}: {messages[step - 1]}</p>
+
+        <p className="messagge" >
+          <h3>Step {step}</h3>{messages[step - 1]}
+        </p>
+        
         <br></br>
         <div className="buttons">
           <buttons onClick={handlePrevious} style={{ cursor: 'pointer', padding: '10px 20px', backgroundColor: '#7950f2', color: '#fff' }}>Previous</buttons>
@@ -49,4 +53,4 @@ function Steps() {
       )}
     </>
   );
-}
+ }
